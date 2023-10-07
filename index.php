@@ -7,6 +7,8 @@
   <title>Nekoquimia</title>
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link rel="icon" type="image/ico" href="favicon\kitsune.png">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -18,12 +20,12 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav">
-          <a class="nav-link active" aria-current="page" href="?page=novo">Cadastrar</a>
-          <a class="nav-link" href="?page=listar">Listar usuario</a>
+          <a class="nav-link active" aria-current="page" href="?page=novo">Login</a>
         </div>
       </div>
     </div>
   </nav>
+
 
   <div class="container">
     <div class="row">
@@ -46,6 +48,7 @@
       </div>
     </div>
   </div>
+
 
 </body>
 <script src="js/bootstrap.bundle.min.js"></script>
