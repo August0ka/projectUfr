@@ -1,42 +1,31 @@
 <?php
-switch ($_REQUEST["acao"]) {
-    case 'cadastrar':
-        $nome = $_POST["nome"];
-        $email = $_POST["email"];
-        $senha = $_POST["senha"];
-        $data_nasc = $_POST["data_nasc"];
+    include 'config.php';
 
-        $sql = "INSERT INTO usuarios (nome, email, senha, data_nasc) VALUES ( '{$nome}','{$email}','{$senha}','{$data_nasc}')";
-        //conecta no servidor sql pelo arquivo config.php
-        $res = $conn ->query($sql);
+    if(isset($_POST['email']) && $_POST['password']){
+        $email = $_POST['email'];
+        $password = $_POST['password'];
+      }
 
-        if($res==true ){
-            print "<script>alert('Cadastro com sucesso');</script>";
+        $sql = $conn->prepare('select * from admin');
+        $sql->execute();
+        $admin = $sql->fetchAll(PDO::FETCH_ASSOC);
+        $data=$admin[0];
+        
+
+
+        if ($email == $data['email'] && $password == $data['password']) {
+            ob_start();
+            include 'app/consult/index.php'; // Substitua 'minha_view.php' pelo nome do seu arquivo de view
+            $returnView = ob_get_clean();
+            echo $returnView;
         }
         else{
-            print "<script>alert('Não foi possivel cadastrar');</script>";
-
+            print "<script>alert('Usuario ou senha incorretos');</script>";
+            ob_start();
+            include 'index.php'; // Substitua 'minha_view.php' pelo nome do seu arquivo de view
+            $returnView = ob_get_clean();
+            echo $returnView;
         }
-        break;
-
-
-   
-    case 'excluir':
-        $sql = "DELETE FROM usuarios WHERE id=".$_REQUEST["id"];
-
-        $res = $conn ->query($sql);
-
-        if($res==true){
-            print"<script>alert('Excluido com sucesso');>/script";
-            print"<script>location.href='?page=listar';/script";
-        }
-
-
-            break;
-
-
-
-}
 
 
 ?>

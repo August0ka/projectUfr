@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -5,52 +6,32 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Nekoquimia</title>
+
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link rel="icon" type="image/ico" href="favicon\kitsune.png">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+  <script src="js/bootstrap.bundle.min.js"></script>
 </head>
 
 <body>
-  <nav class="navbar navbar-expand-lg bg-body-tertiary">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="index.php">Home</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-        <div class="navbar-nav">
-          <a class="nav-link active" aria-current="page" href="?page=novo">Login</a>
-        </div>
-      </div>
-    </div>
-  </nav>
-
-
-  <div class="container">
-    <div class="row">
-      <div class="col mt-5">
-        <?php
-        include("config.php");
-        switch (@$_REQUEST["page"]) {
-          case "novo":
-            include("novoUsuario.php");
-            break;
-          case "listar":
-            include("listarUsuario.php");
-            break;
-          case "salvar":
-            include("salvarUsuario.php");
-          default:
-            print "<h1>Bem Vindos!</h1>";
-        }
-        ?>
-      </div>
-    </div>
+<form action="salvarUsuario.php" method="POST" >
+  <!-- Email input -->
+  <div class="form-outline mb-4">
+    <input name="email" type="email" id="form2Example1" class="form-control" />
+    <label  class="form-label" for="form2Example1">Email address</label>
   </div>
 
+  <!-- Password input -->
+  <div class="form-outline mb-4">
+    <input name="password" type="password" id="form2Example2" class="form-control" />
+    <label class="form-label" for="form2Example2">Password</label>
+  </div>
+  </div>
 
+  <!-- Submit button -->
+  <button type="submit" class="btn btn-primary btn-block mb-4">Sign in</button>
+</form>
 </body>
-<script src="js/bootstrap.bundle.min.js"></script>
 
 </html>
