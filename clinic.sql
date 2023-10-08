@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.1
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 07/10/2023 às 22:17
--- Versão do servidor: 10.4.28-MariaDB
--- Versão do PHP: 8.2.4
+-- Tempo de geração: 08-Out-2023 às 03:10
+-- Versão do servidor: 10.4.24-MariaDB
+-- versão do PHP: 8.1.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,7 +24,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `admin`
+-- Estrutura da tabela `admin`
 --
 
 CREATE TABLE `admin` (
@@ -32,12 +32,19 @@ CREATE TABLE `admin` (
   `name` varchar(45) DEFAULT NULL,
   `email` varchar(45) DEFAULT NULL,
   `password` varchar(50) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Extraindo dados da tabela `admin`
+--
+
+INSERT INTO `admin` (`id`, `name`, `email`, `password`) VALUES
+(1, 'admin', 'admin@admin.com', 'admin123');
 
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `consult`
+-- Estrutura da tabela `consult`
 --
 
 CREATE TABLE `consult` (
@@ -48,12 +55,12 @@ CREATE TABLE `consult` (
   `data` date DEFAULT NULL,
   `hour` time(6) DEFAULT NULL,
   `active` tinyint(1) NOT NULL DEFAULT 1
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `doctors`
+-- Estrutura da tabela `doctors`
 --
 
 CREATE TABLE `doctors` (
@@ -64,12 +71,12 @@ CREATE TABLE `doctors` (
   `phone` varchar(30) DEFAULT NULL,
   `expertise` varchar(60) DEFAULT NULL,
   `active` tinyint(1) NOT NULL DEFAULT 1
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `patient`
+-- Estrutura da tabela `patient`
 --
 
 CREATE TABLE `patient` (
@@ -80,20 +87,20 @@ CREATE TABLE `patient` (
   `phone` varchar(25) DEFAULT NULL,
   `address` varchar(60) DEFAULT NULL,
   `active` tinyint(1) NOT NULL DEFAULT 1
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Índices para tabelas despejadas
 --
 
 --
--- Índices de tabela `admin`
+-- Índices para tabela `admin`
 --
 ALTER TABLE `admin`
   ADD PRIMARY KEY (`id`);
 
 --
--- Índices de tabela `consult`
+-- Índices para tabela `consult`
 --
 ALTER TABLE `consult`
   ADD PRIMARY KEY (`id`),
@@ -101,26 +108,26 @@ ALTER TABLE `consult`
   ADD KEY `fk_doctor` (`doctors_id`);
 
 --
--- Índices de tabela `doctors`
+-- Índices para tabela `doctors`
 --
 ALTER TABLE `doctors`
   ADD PRIMARY KEY (`id`);
 
 --
--- Índices de tabela `patient`
+-- Índices para tabela `patient`
 --
 ALTER TABLE `patient`
   ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT para tabelas despejadas
+-- AUTO_INCREMENT de tabelas despejadas
 --
 
 --
 -- AUTO_INCREMENT de tabela `admin`
 --
 ALTER TABLE `admin`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de tabela `consult`
@@ -141,11 +148,11 @@ ALTER TABLE `patient`
   MODIFY `id` int(10) NOT NULL AUTO_INCREMENT;
 
 --
--- Restrições para tabelas despejadas
+-- Restrições para despejos de tabelas
 --
 
 --
--- Restrições para tabelas `consult`
+-- Limitadores para a tabela `consult`
 --
 ALTER TABLE `consult`
   ADD CONSTRAINT `fk_doctor` FOREIGN KEY (`doctors_id`) REFERENCES `doctors` (`id`),
