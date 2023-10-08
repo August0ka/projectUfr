@@ -14,10 +14,9 @@
 
 
         if ($email == $data['email'] && $password == $data['password']) {
-            ob_start();
-            include 'app/consult/index.php'; // Substitua 'minha_view.php' pelo nome do seu arquivo de view
-            $returnView = ob_get_clean();
-            echo $returnView;
+            header("Location: consultIndex.php");
+            exit;
+
         }
         else{
             print "<script>alert('Usuario ou senha incorretos');</script>";
