@@ -1,15 +1,15 @@
 <?php
 include 'header.php';
-include 'configs.php';
+include 'config.php';
 
 $sql = $conn->prepare('select * from consult');
 $sql->execute();
 $consults = $sql->fetchAll(PDO::FETCH_ASSOC);
 
-
+echo '<a class="btn btn-info" href="consultForm.php" role="button" style="margin-top: 8%; margin-left:2%; margin-bottom: 4% ">Cadastrar</a>';
 if(count($consults) > 0){
     
-    echo "<table class='table table-striped table-hover table-bordered' style='margin-top: 400px'>";
+    echo "<table class='table table-striped table-hover table-bordered' >";
         
     echo "<tr>";
         echo "<th>#</th>";
@@ -35,7 +35,7 @@ if(count($consults) > 0){
             echo "</table>";
             
         } else {
-            echo "<p style='margin-top: 400px'>Nenhum registro encontrado</p>";
+            echo "<p style='font-weight: bold;  color: red; font-style: italic; display: flex; justify-content: center;'>Nenhum registro encontrado !</p>";
         }
         
 ?>

@@ -15,7 +15,7 @@
 </head>
 
 <body>
-<form action="salvarUsuario.php" method="POST" >
+<form action="auth.php" method="POST" >
   <!-- Email input -->
   <div class="form-outline mb-4">
     <input name="email" type="email" id="form2Example1" class="form-control" />

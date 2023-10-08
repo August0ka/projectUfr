@@ -6,6 +6,7 @@ $sql = $conn->prepare('select * from doctors');
 $sql->execute();
 $doctors = $sql->fetchAll(PDO::FETCH_ASSOC);
 
+echo '<a class="btn btn-info" href="doctorsForm.php" role="button" style="margin-top: 8%; margin-left:2%; margin-bottom: 4% ">Cadastrar</a>';
 
 if(count($doctors) > 0){
     
@@ -35,7 +36,7 @@ if(count($doctors) > 0){
             echo "</table>";
             
         } else {
-            echo "<p style='margin-top: 400px'>Nenhum registro encontrado</p>";
+            echo "<p style='font-weight: bold;  color: red; font-style: italic; display: flex; justify-content: center;'>Nenhum registro encontrado !</p>";
         }
         
 ?>
