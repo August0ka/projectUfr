@@ -27,7 +27,7 @@ $patients = $sql->fetchAll(PDO::FETCH_ASSOC);
       </select>
     </div>
     <div class="col-6">
-      <label for="inputDoctor" class="form-label">Paciente</label>
+      <label for="inputPatients" class="form-label">Paciente</label>
       <select name="patient_id" class="form-select" aria-label="Default select example">
         <option value="">Selecione..</option>
               <?php foreach ($patients as $patient): ?>
@@ -43,7 +43,7 @@ $patients = $sql->fetchAll(PDO::FETCH_ASSOC);
     </div>  
     <div class="col-md-4">
             <label for="inputPassword4" class="form-label">Hora</label>
-            <input name="time" placeholder="00:00" type="time" class="form-control" id="inputCRM" />
+            <input name="hour" placeholder="00:00" type="time" class="form-control" id="inputCRM" />
     </div>  
     <div class="col-6">
       <label for="exampleFormControlTextarea1" class="form-label">Descrição</label>

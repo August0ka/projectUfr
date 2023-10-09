@@ -2,7 +2,7 @@
 include 'header.php';
 include 'config.php';
 
-$sql = $conn->prepare('select * from consult');
+$sql = $conn->prepare('select * from consult where active = 1');
 $sql->execute();
 $consults = $sql->fetchAll(PDO::FETCH_ASSOC);
 
@@ -28,7 +28,7 @@ if(count($consults) > 0){
                 echo "<td>" . $row['description'] . "</td>";
                 echo "<td>" . $row['data'] . "</td>";
                 echo "<td>" . $row['hour'] . "</td>";
-                echo "<td><button onclick=\"if(confirm('Tem certeza que deseja excluir?')){location.href='?page=salvar&acao=excluir&id=" . $row['id'] . "';}\" class='btn btn-danger'>EXCLUIR</button></td>";
+                echo "<td><button data-id='" . $row['id'] . "' class='btn btn-danger delete-btn'>EXCLUIR</button></td>";
                 echo "</tr>";
             }
             
@@ -39,3 +39,29 @@ if(count($consults) > 0){
         }
         
 ?>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+$(document).ready(function() {
+    $(".delete-btn").click(function() {
+        var id = $(this).data("id");
+        
+        if (confirm('Tem certeza que deseja excluir?')) {
+            $.ajax({
+                
+                type: "POST",
+                url: "createConsults.php",
+                data: { action: "delete", id: id },
+
+                success: function(response) {
+                    location.reload();
+                },
+
+                error: function() { 
+                    alert("Erro ao excluir o paciente.");
+                }
+            });
+        }
+    });
+});
+</script>

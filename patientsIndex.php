@@ -2,7 +2,7 @@
 include 'header.php';
 include 'config.php';
 
-$sql = $conn->prepare('select * from patient');
+$sql = $conn->prepare('select * from patient where active = 1');
 $sql->execute();
 $patients = $sql->fetchAll(PDO::FETCH_ASSOC);
 
@@ -29,7 +29,7 @@ if(count($patients) > 0){
         echo "<td>" . $row['email'] . "</td>";
         echo "<td>" . $row['phone'] . "</td>";
         echo "<td>" . $row['address'] . "</td>";
-        echo "<td><button onclick=\"if(confirm('Tem certeza que deseja excluir?')){location.href='?page=salvar&acao=excluir&id=" . $row['id'] . "';}\" class='btn btn-danger'>EXCLUIR</button></td>";
+        echo "<td><button data-id='" . $row['id'] . "' class='btn btn-danger delete-btn'>EXCLUIR</button></td>";
         echo "</tr>";
     }
     
@@ -39,3 +39,30 @@ if(count($patients) > 0){
     echo "<p style='font-weight: bold;  color: red; font-style: italic; display: flex; justify-content: center;'>Nenhum registro encontrado !</p>";
 }
 ?>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+$(document).ready(function() {
+    $(".delete-btn").click(function() {
+        var id = $(this).data("id");
+        
+        if (confirm('Tem certeza que deseja excluir?')) {
+            $.ajax({
+                
+                type: "POST",
+                url: "createPatients.php",
+                data: { action: "delete", id: id },
+
+                success: function(response) {
+                    location.reload();
+                },
+
+                error: function() { 
+                    alert("Erro ao excluir o paciente.");
+                }
+            });
+        }
+    });
+});
+</script>
+
