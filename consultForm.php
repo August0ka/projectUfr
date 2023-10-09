@@ -50,9 +50,9 @@ $patients = $sql->fetchAll(PDO::FETCH_ASSOC);
       <textarea name="description" class="form-control" id="exampleFormControlTextarea1" rows="5"></textarea>
     </div>
     <div class="col-12">
-          <input type="hidden" name="confirme" id="confirme"> 
-          <button style="margin-top: 2%;" type="submit" class="btn btn-success">Salvar</button>
-        </div>
+      <input type="hidden" name="confirme" id="confirme"> 
+      <button style="margin-top: 2%;" type="submit" class="btn btn-success">Salvar</button>
+    </div>
   </div>
   </form>
 </main>

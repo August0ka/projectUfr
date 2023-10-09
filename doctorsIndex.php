@@ -29,6 +29,7 @@ if(count($doctors) > 0){
                 echo "<td>" . $row['email'] . "</td>";
                 echo "<td>" . $row['phone'] . "</td>";
                 echo "<td>" . $row['expertise'] . "</td>";
+                echo "<td><a href='editDoctors.php?id=" . $row['id'] . "' class='btn btn-primary'>EDITAR</a></td>";
                 echo "<td><button data-id='" . $row['id'] . "' class='btn btn-danger delete-btn'>EXCLUIR</button></td>";
                 echo "</tr>";
             }

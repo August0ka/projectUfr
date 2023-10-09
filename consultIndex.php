@@ -2,7 +2,15 @@
 include 'header.php';
 include 'config.php';
 
-$sql = $conn->prepare('select * from consult where active = 1');
+$sql = $conn->prepare('SELECT consult.*,
+    doctors.name AS doctor_name,
+    patient.name AS patient_name
+    FROM consult
+    JOIN doctors ON consult.doctors_id = doctors.id
+    JOIN patient ON consult.patient_id = patient.id
+    WHERE consult.active = 1');
+
+
 $sql->execute();
 $consults = $sql->fetchAll(PDO::FETCH_ASSOC);
 
@@ -22,14 +30,15 @@ if(count($consults) > 0){
         
         foreach ($consults as $row) {
             echo "<tr>";
-                echo "<td>" . $row['id'] . "</td>";
-                echo "<td>" . $row['doctors_id'] . "</td>";
-                echo "<td>" . $row['patient_id'] . "</td>";
-                echo "<td>" . $row['description'] . "</td>";
-                echo "<td>" . $row['data'] . "</td>";
-                echo "<td>" . $row['hour'] . "</td>";
-                echo "<td><button data-id='" . $row['id'] . "' class='btn btn-danger delete-btn'>EXCLUIR</button></td>";
-                echo "</tr>";
+            echo "<td>" . $row['id'] . "</td>";
+            echo "<td>" . $row['doctor_name'] . "</td>";
+            echo "<td>" . $row['patient_name'] . "</td>";
+            echo "<td>" . $row['description'] . "</td>";
+            echo "<td>" . $row['data'] . "</td>";
+            echo "<td>" . $row['hour'] . "</td>";
+            echo "<td><a href='editConsult.php?id=" . $row['id'] . "' class='btn btn-primary'>EDITAR</a></td>";
+            echo "<td><button data-id='" . $row['id'] . "' class='btn btn-danger delete-btn'>EXCLUIR</button></td>";
+            echo "</tr>";
             }
             
             echo "</table>";
