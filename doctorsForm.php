@@ -29,4 +29,29 @@ include 'header.php';
         <button style="margin-top: 2%;" type="submit" class="btn btn-success">Cadastrar</button>
       </div>
     </form>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+      $(document).ready(function() {
+          $('#inputPhone4').on('input', function() {
+              var input = $(this).val().replace(/\D/g, '');
+              var formattedInput = '';
+
+              if (input.length >= 2) {
+                  formattedInput += '(' + input.substring(0, 2) + ')';
+              }
+
+              if (input.length > 2) {
+                  formattedInput += ' ' + input.substring(2, 6);
+              }
+
+              if (input.length > 6) {
+                  formattedInput += '-' + input.substring(6, 10);
+              }
+
+              $(this).val(formattedInput);
+          });
+      });
+  </script>
+
 </main>

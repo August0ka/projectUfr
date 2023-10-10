@@ -83,7 +83,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         </select>
         <div class="col-md-4">
             <label for="inputPassword4" class="form-label">Data</label>
-            <input name="date" placeholder="DD/MM/AAAA" type="date" class="form-control" id="inputdoctors_id" value="<?php echo date('Y-m-d', strtotime($consult['data'])); ?>" />
+            <input name="data" placeholder="DD/MM/AAAA" type="date" class="form-control" id="inputdoctors_id" value="<?php echo date('Y-m-d', strtotime($consult['data'])); ?>" />
         </div>  
 
         <div class="col-md-4">
