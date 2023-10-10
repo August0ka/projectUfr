@@ -13,7 +13,8 @@ $patients = $sql->fetchAll(PDO::FETCH_ASSOC);
 
 <main>
 
-  <form method="post" action="createConsults.php" style="padding-top: 9%;  max-width: 100%;" class="row g-3">
+  <form method="post" action="createConsults.php" style="padding-top: 5%;  max-width: 100%;" class="row g-3">
+  <legend style="padding-left:25%; padding-bottom:2%">AGENDAMENTO DE CONSULTA</legend>
   <div class="container-fluid" style="padding-left:30%;">
     <div class="col-6">
       <label for="inputDoctor" class="form-label">Médico</label>
