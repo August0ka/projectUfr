@@ -6,11 +6,15 @@ $sql = $conn->prepare('select * from patient where active = 1');
 $sql->execute();
 $patients = $sql->fetchAll(PDO::FETCH_ASSOC);
 
-echo '<a class="btn btn-info" href="patientsForm.php" role="button" style="margin-top: 8%; margin-left:2%; margin-bottom: 4%;">Cadastrar</a>';
+echo '<a class="btn btn-success" href="patientsForm.php" role="button" style="margin-top: 8%; margin-left:2%; margin-bottom: 4%;">Cadastrar</a>';
 
 if(count($patients) > 0){
 
-    echo "<table class='table table-striped table-hover table-bordered'>";
+    
+    echo "<legend style='padding-left:15%; padding-bottom:2%'>PACIENTES</legend>";
+
+    echo "<div class='container-fluid' style='display:grid; justify-content: center; align-items: center;'>";
+    echo "<table class='table table-success table-striped ' style='margin:0 auto; max-width: 100%;'>";
     
     echo "<tr>";
     echo "<th>#</th>";
@@ -19,6 +23,7 @@ if(count($patients) > 0){
     echo "<th>EMAIl</th>";
     echo "<th>TELEFONE</th>";
     echo "<th>ENDEREÇO</th>";
+    echo "<th></th>";
     echo "</tr>";
     
     foreach ($patients as $row) {
@@ -28,14 +33,15 @@ if(count($patients) > 0){
         echo "<td>" . $row['name'] . "</td>";
         echo "<td>" . $row['email'] . "</td>";
         echo "<td>" . $row['phone'] . "</td>";
-        echo "<td>" . $row['address'] . "</td>";
-        echo "<td><a href='editPatient.php?id=" . $row['id'] . "' class='btn btn-primary'>EDITAR</a></td>";
-        echo "<td><button data-id='" . $row['id'] . "' class='btn btn-danger delete-btn'>EXCLUIR</button></td>";
-        echo "</tr>";
+        echo "<td style='word-wrap:  break-word'>" . $row['address'] . "</td>";
+        echo "<td style='border-left: 5px solid gainsboro;'>
+                <a href='editConsult.php?id=" . $row['id'] . "' class='btn btn-primary'>EDITAR</a>
+                <button data-id='" . $row['id'] . "' class='btn btn-danger delete-btn'>EXCLUIR</button></td>";
+                echo "</tr>";    
     }
     
     echo "</table>";
-    
+    echo "</div>";
 } else {
     echo "<p style='font-weight: bold;  color: red; font-style: italic; display: flex; justify-content: center;'>Nenhum registro encontrado !</p>";
 }

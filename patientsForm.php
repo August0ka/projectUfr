@@ -3,7 +3,8 @@ include 'header.php';
  
 ?>
 <main>
-    <form action="createPatients.php" method="post" style="padding: 10%; max-width: 100%;" class="row g-3">
+    <form action="createPatients.php" method="post" style="padding: 9%; max-width: 100%;" class="row g-3">
+    <legend style="padding-left:15%; padding-bottom:2%">CADASTRO DE PACIENTE</legend>
         <div class="col-md-8">
           <label for="inputEmail4" class="form-label">Nome</label>
           <input name="name" type="text" class="form-control" id="inputExpertise4" />

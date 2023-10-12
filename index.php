@@ -15,22 +15,24 @@
 </head>
 
 <body>
-<form action="auth.php" method="POST" >
+<form action="auth.php" method="POST" style="padding: 30%; padding-top: 5%; ">
+<legend style="margin-top:10%; margin-bottom: 10%;">LOGIN</legend>
   <!-- Email input -->
   <div class="form-outline mb-4">
-    <input name="email" type="email" id="form2Example1" class="form-control" />
-    <label  class="form-label" for="form2Example1">Email address</label>
-  </div>
+      <label  class="form-label" for="form2Example1">Email</label>
+      <input name="email" type="email" id="form2Example1" class="form-control" />
+    </div>
 
   <!-- Password input -->
-  <div class="form-outline mb-4">
-    <input name="password" type="password" id="form2Example2" class="form-control" />
-    <label class="form-label" for="form2Example2">Password</label>
-  </div>
-  </div>
+    <div class="form-outline mb-4">
+      <label class="form-label" for="form2Example2">Senha</label>
+      <input name="password" type="password" id="form2Example2" class="form-control" />
+    </div>
+    </div>
 
   <!-- Submit button -->
-  <button type="submit" class="btn btn-primary btn-block mb-4">Sign in</button>
+    <button type="submit" class="btn btn-success btn-block mb-4">Entrar</button>
+
 </form>
 </body>
 

@@ -3,7 +3,8 @@ include 'header.php';
  
 ?>
 <main>
-    <form action="createDoctors.php" method="post" style="padding: 10%; max-width: 100%;" class="row g-3">
+    <form action="createDoctors.php" method="post" style="padding: 9%; max-width: 100%;" class="row g-3">
+    <legend style="padding-left:15%; padding-bottom:2%">CADASTRO DE MÉDICOS</legend>
       <div class="col-8">
         <label for="inputAddress" class="form-label">Nome</label>
         <input name="name" type="text" class="form-control" id="inputName" />
@@ -28,4 +29,29 @@ include 'header.php';
         <button style="margin-top: 2%;" type="submit" class="btn btn-success">Cadastrar</button>
       </div>
     </form>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+      $(document).ready(function() {
+          $('#inputPhone4').on('input', function() {
+              var input = $(this).val().replace(/\D/g, '');
+              var formattedInput = '';
+
+              if (input.length >= 2) {
+                  formattedInput += '(' + input.substring(0, 2) + ')';
+              }
+
+              if (input.length > 2) {
+                  formattedInput += ' ' + input.substring(2, 6);
+              }
+
+              if (input.length > 6) {
+                  formattedInput += '-' + input.substring(6, 10);
+              }
+
+              $(this).val(formattedInput);
+          });
+      });
+  </script>
+
 </main>
