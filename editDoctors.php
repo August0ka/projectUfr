@@ -50,7 +50,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 ?>
 
 <main>
-    <form action="editDoctors.php?id=<?php echo $doctors['id']; ?>" method="post" style="padding: 10%; max-width: 100%;" class="row g-3">
+    <form action="editDoctors.php?id=<?php echo $doctors['id']; ?>" method="post"  style="padding: 9%; max-width: 100%;"  class="row g-3">
+        <legend style="padding-left:25%; padding-bottom:2%">CADASTRO DE MÉDICOS</legend>
       <div class="col-8">
         <label for="inputAddress" class="form-label">Nome</label>
         <input name="name" type="text" class="form-control" id="inputName" value="<?php echo htmlspecialchars($doctors['name']); ?>" />
