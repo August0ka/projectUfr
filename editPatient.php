@@ -50,8 +50,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 <main>
 
-    <form action="editPatient.php?id=<?php echo $patient['id']; ?>" method="post" style="padding: 9%; max-width: 100%;"  class="row g-3">
-        <legend style="padding-left:25%; padding-bottom:2%">CADASTRO DE PACIENTE</legend>
+    <form action="editPatient.php?id=<?php echo $patient['id']; ?>" method="post" style=" padding:15%; padding-top: 6%; padding-bottom:1%; max-width: 100%;" class="row g-3">
+    <div style=" background-color: rgba(0, 0, 0, 0.2); padding:10%; padding-bottom:4%; padding-top:4%; border-radius: 10px;">
+
+    <legend style="padding-left:35%; padding-bottom:2%">CADASTRO DE PACIENTE</legend>
         <div class="col-md-8">
             <label for="inputExpertise4" class="form-label">Nome</label>
             <input name="name" type="text" class="form-control" id="inputExpertise4" value="<?php echo htmlspecialchars($patient['name']); ?>" />
@@ -77,6 +79,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <div class="col-12">
             <button style="margin-top: 2%;" type="submit" class="btn btn-success">Salvar</button>
         </div>
+    </div>
     </form>
 </main>
 
