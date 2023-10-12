@@ -37,8 +37,8 @@ if(count($consults) > 0){
                 echo "<td>" . $row['doctor_name'] . "</td>";
                 echo "<td>" . $row['patient_name'] . "</td>";
                 echo "<td>" . $row['description'] . "</td>";
-                echo "<td>" . $row['data'] . "</td>";
-                echo "<td>" . $row['hour'] . "</td>";
+                echo "<td>" . date('d/m/Y', strtotime($row['data'])) . "</td>";
+                echo "<td>" . substr($row['hour'], 0, 5) . "</td>";
                 echo "<td style='border-left: 5px solid gainsboro;'>
                 <a href='editConsult.php?id=" . $row['id'] . "' class='btn btn-primary'>EDITAR</a>
                 <button data-id='" . $row['id'] . "' class='btn btn-danger delete-btn'>EXCLUIR</button></td>";

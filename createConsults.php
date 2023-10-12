@@ -2,9 +2,9 @@
 include 'config.php';
 
 if (    
-    isset($_POST['doctor_id']) &&
-    isset($_POST['patient_id']) &&
     isset($_POST['description']) &&
+    isset($_POST['patient_id']) &&
+    isset($_POST['doctor_id']) &&
     isset($_POST['date']) &&
     isset($_POST['hour']))
     {

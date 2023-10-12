@@ -2,11 +2,12 @@
 include 'config.php';
 
 if (    
-    isset($_POST['name']) &&
-    isset($_POST['CRM']) &&
-    isset($_POST['email']) &&
+    isset($_POST['expertise']) &&
     isset($_POST['phone']) &&
-    isset($_POST['expertise']))
+    isset($_POST['email']) &&
+    isset($_POST['name']) &&
+    isset($_POST['CRM'])
+    )
     {
         $expertise = $_POST['expertise'];
         $email = $_POST['email'];

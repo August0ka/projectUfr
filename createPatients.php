@@ -2,11 +2,12 @@
     include 'config.php';
 
     if (    
-        isset($_POST['name']) &&
-        isset($_POST['CPF']) &&
-        isset($_POST['email']) &&
+        isset($_POST['address']) &&
         isset($_POST['phone']) &&
-        isset($_POST['address']))
+        isset($_POST['email']) &&
+        isset($_POST['name']) &&
+        isset($_POST['CPF'])
+        )
         {
             $address = $_POST['address'];
             $email = $_POST['email'];
@@ -16,7 +17,7 @@
 
             try {
                 $query = $conn->prepare('INSERT INTO patient(CPF, name, email, phone, address) VALUES (?, ?, ?, ?, ?)');
-                $query->bindParam(1, $CPF, PDO::PARAM_INT);
+                $query->bindParam(1, $CPF, PDO::PARAM_STR);
                 $query->bindParam(2, $name, PDO::PARAM_STR);
                 $query->bindParam(3, $email, PDO::PARAM_STR);
                 $query->bindParam(4, $phone, PDO::PARAM_STR); 

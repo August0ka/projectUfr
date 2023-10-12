@@ -13,15 +13,15 @@ include 'header.php';
       </div>
       <div class="col-md-4">
         <label for="inputPassword4" class="form-label">CRM</label>
-        <input name="CRM" placeholder="00000" type="text" class="form-control" id="inputCRM" />
+        <input name="CRM" placeholder="0000000" type="text" class="form-control crm " id="inputCRM" />
       </div>
       <div class="col-md-6">
         <label for="inputPassword4" class="form-label">Email</label>
         <input name="email" placeholder="example@mail.com" type="email" class="form-control" id="inputEmail4" />
       </div>
       <div class="col-md-6">
-        <label for="inputEmail4" class="form-label">Telefone</label>
-        <input name="phone" placeholder="(00) 0000-0000" type="text" class="form-control" id="inputPhone4" />
+        <label for="inputEmail4" class="form-label ">Telefone</label>
+        <input name="phone" placeholder="(00) 00000-0000" type="text" class="form-control phone_with_ddd" id="inputPhone4" />
       </div>
       <div class="col-md-8">
         <label for="inputEmail4" class="form-label">Especialidade</label>
@@ -32,29 +32,19 @@ include 'header.php';
       </div>
     </div>
     </form>
-
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script>
-      $(document).ready(function() {
-          $('#inputPhone4').on('input', function() {
-              var input = $(this).val().replace(/\D/g, '');
-              var formattedInput = '';
-
-              if (input.length >= 2) {
-                  formattedInput += '(' + input.substring(0, 2) + ')';
-              }
-
-              if (input.length > 2) {
-                  formattedInput += ' ' + input.substring(2, 6);
-              }
-
-              if (input.length > 6) {
-                  formattedInput += '-' + input.substring(6, 10);
-              }
-
-              $(this).val(formattedInput);
-          });
-      });
-  </script>
-
 </main>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js" integrity="sha512-pHVGpX7F/27yZ0ISY+VVjyULApbDlD0/X0rgGbTqCE7WFW5MezNTWG/dnhtbBuICzsd0WQPgpE4REBLv+UqChw==" crossorigin="anonymous" referrerpolicy="no-referrer"> </script>
+
+<script>
+
+  $(document).ready(function() {
+
+      $('.phone_with_ddd').mask('(00) 00000-0000');
+
+      $('.crm').mask('0000000');
+
+  });
+
+</script>
