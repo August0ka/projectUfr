@@ -29,6 +29,10 @@ if (isset($_GET['id'])) {
 }
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    // echo '<pre style="padding-top: 9%;>';
+    // var_dump($_POST);
+    // echo '</pre>';
+
     // Processar o formulário de edição aqui
     $doctors_id = $_POST['doctors_id'];
     $patient_id = $_POST['patient_id'];
@@ -64,7 +68,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   <div class="container-fluid" style="padding-left:30%;">
     <div class="col-6">
         <label for="inputDoctor" class="form-label">Médico</label>
-        <select name="doctor_id" class="form-select" aria-label="Default select example">
+        <select name="doctors_id" class="form-select" aria-label="Default select example">
             <option value="">Selecione..</option>
             <?php foreach ($doctors as $doctor): ?>
                 <option value="<?=$doctor['id'];?>" <?php if ($doctor['id'] == $consult['doctors_id']) echo 'selected'; ?>>
@@ -104,6 +108,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   </div>
   </form>
 </main>
+
 
 
 
