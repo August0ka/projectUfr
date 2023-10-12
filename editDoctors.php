@@ -22,12 +22,12 @@ if (isset($_GET['id'])) {
 }
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    // Processar o formulário de edição aqui
-    $CRM = $_POST['CRM'];
-    $name = $_POST['name'];
-    $email = $_POST['email'];
-    $phone = $_POST['phone'];
-    $expertise = $_POST['expertise'];
+
+  $expertise = $_POST['expertise'];
+  $phone = $_POST['phone'];
+  $email = $_POST['email'];
+  $name = $_POST['name'];
+  $CRM = $_POST['CRM'];
 
     $sql = $conn->prepare('UPDATE doctors SET CRM = :CRM, name = :name, email = :email, phone = :phone, expertise = :expertise WHERE id = :id');
     $sql->bindParam(':CRM', $CRM, PDO::PARAM_STR);

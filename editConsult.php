@@ -29,14 +29,10 @@ if (isset($_GET['id'])) {
 }
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    // echo '<pre style="padding-top: 9%;>';
-    // var_dump($_POST);
-    // echo '</pre>';
 
-    // Processar o formulário de edição aqui
+    $description = $_POST['description'];
     $doctors_id = $_POST['doctors_id'];
     $patient_id = $_POST['patient_id'];
-    $description = $_POST['description'];
     $data = $_POST['data'];
     $hour = $_POST['hour'];
 
@@ -49,7 +45,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $sql->bindParam(':id', $id, PDO::PARAM_INT);
 
     if ($sql->execute()) {
-
+        
         header('Location: consultIndex.php');
         exit;
 
@@ -108,7 +104,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   </div>
   </form>
 </main>
-
 
 
 

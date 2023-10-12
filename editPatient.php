@@ -22,12 +22,12 @@ if (isset($_GET['id'])) {
 }
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    // Processar o formulário de edição aqui
-    $CPF = $_POST['CPF'];
-    $name = $_POST['name'];
-    $email = $_POST['email'];
-    $phone = $_POST['phone'];
+    
     $address = $_POST['address'];
+    $phone = $_POST['phone'];
+    $email = $_POST['email'];
+    $name = $_POST['name'];
+    $CPF = $_POST['CPF'];
 
     $sql = $conn->prepare('UPDATE patient SET CPF = :CPF, name = :name, email = :email, phone = :phone, address = :address WHERE id = :id');
     $sql->bindParam(':CPF', $CPF, PDO::PARAM_STR);
@@ -38,9 +38,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $sql->bindParam(':id', $id, PDO::PARAM_INT);
 
     if ($sql->execute()) {
-        // Redirecionar para a página de lista de pacientes após a edição bem-sucedida
+
         header('Location: patientsIndex.php');
         exit;
+
     } else {
         echo "Erro ao atualizar o paciente.";
     }

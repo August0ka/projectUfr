@@ -2,11 +2,12 @@
     include 'config.php';
 
     if (    
-        isset($_POST['name']) &&
-        isset($_POST['CPF']) &&
-        isset($_POST['email']) &&
+        isset($_POST['address']) &&
         isset($_POST['phone']) &&
-        isset($_POST['address']))
+        isset($_POST['email']) &&
+        isset($_POST['name']) &&
+        isset($_POST['CPF'])
+        )
         {
             $address = $_POST['address'];
             $email = $_POST['email'];
