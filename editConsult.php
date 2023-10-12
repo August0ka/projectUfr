@@ -59,7 +59,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 <main>
 
-  <form method="post" action="editconsult.php?id=<?php echo $consult['id']; ?>" style=" padding: 10%;  padding-bottom:1%; padding-top:5%;" class="row g-3">
+  <form method="post" action="editconsult.php?id=<?php echo $consult['id']; ?>" style=" padding: 10%;  padding-bottom:1%; padding-top:5%; width:100%; overflow-x:hidden;" class="row g-3">
   <div style=" background-color: rgba(0, 0, 0, 0.2); padding-left:10%; padding-bottom:1%; padding-top:1%; border-radius: 10px;">
 
     <legend style="padding-left:30%; padding-bottom:2%">AGENDAMENTO DE CONSULTA</legend>

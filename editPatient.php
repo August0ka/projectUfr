@@ -72,9 +72,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <input name="phone" placeholder="(00) 0000-0000" type="text" class="form-control phone_with_ddd" id="inputPhone4" value="<?php echo htmlspecialchars($patient['phone']); ?>" />
         </div>
 
-        <div class="col-12">
+        <div class="col-8">
             <label for="inputAddress" class="form-label">Endereço</label>
-            <input name="address" type="text" class="form-control" id="inputAddress" placeholder="R. Arnaldo,  Jardim Brasilia, Porto Velho - RO" value="<?php echo htmlspecialchars($patient['address']); ?>" />
+            <input name="address" type="text" class="form-control" id="inputAddress" value="<?php echo htmlspecialchars($patient['address']); ?>" />
         </div>
 
         <div class="col-12">

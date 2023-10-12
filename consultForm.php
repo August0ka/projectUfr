@@ -13,7 +13,7 @@ $patients = $sql->fetchAll(PDO::FETCH_ASSOC);
 
 <main>
 
-  <form method="post" action="createConsults.php" style=" padding: 10%;  padding-bottom:1%; padding-top:5%;" class="row g-3">
+  <form method="post" action="createConsults.php" style=" padding: 10%;  padding-bottom:1%; padding-top:5%; width:100%; overflow-x:hidden;" class="row g-3">
   <div style=" background-color: rgba(0, 0, 0, 0.2); padding-left:10%; padding-bottom:1%; padding-top:1%; border-radius: 10px;">
 
     <legend style="padding-left:30%; padding-bottom:2%">AGENDAMENTO DE CONSULTA</legend>
@@ -54,7 +54,7 @@ $patients = $sql->fetchAll(PDO::FETCH_ASSOC);
       </div>
       <div class="col-12">
         <input type="hidden" name="confirme" id="confirme"> 
-        <button style="margin-top: 2%;" type="submit" class="btn btn-success">Salvar</button>
+        <button style="margin-top: 2%;" type="submit" class="btn btn-success">Agendar</button>
       </div>
   </div>
   </form>

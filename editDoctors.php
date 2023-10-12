@@ -76,7 +76,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <input name="expertise" type="text" class="form-control" id="inputExpertise4" value="<?php echo htmlspecialchars($doctors['expertise']); ?>" />
       </div>
       <div class="col-12">
-        <button style="margin-top: 2%;" type="submit" class="btn btn-success">Cadastrar</button>
+        <button style="margin-top: 2%;" type="submit" class="btn btn-success">Salvar</button>
       </div>
     </div>
     </form>

@@ -14,7 +14,7 @@ $sql = $conn->prepare('SELECT consult.*,
 $sql->execute();
 $consults = $sql->fetchAll(PDO::FETCH_ASSOC);
 
-echo '<a class="btn btn-success" href="consultForm.php" role="button" style="margin-top: 8%; margin-left:2%; margin-bottom: 4% ">Cadastrar</a>';
+echo '<a class="btn btn-success" href="consultForm.php" role="button" style="margin-top: 8%; margin-left:2%; margin-bottom: 4% ">Agendar</a>';
 if(count($consults) > 0){
     echo "<legend style= 'padding-left:15%; padding-bottom:2%'>CONSULTAS</legend> ";
     echo "<div class='container-fluid' style='display:grid; justify-content: center; align-items: center;'>";

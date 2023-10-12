@@ -10,7 +10,7 @@
   <script src="js/bootstrap.bundle.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 </head>
-<body style="height: 100%; overflow:hidden; background-color: #f5f5dc;">
+<body style="height: 100%; background-color: #f5f5dc;">
 
   <nav class="navbar navbar-dark bg-dark fixed-top">
     <div class="container-fluid">
