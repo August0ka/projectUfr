@@ -58,7 +58,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
       </div>
       <div class="col-md-4">
         <label for="inputPassword4" class="form-label">CRM</label>
-        <input name="CRM" placeholder="00000" type="text" class="form-control" id="inputCRM" value="<?php echo htmlspecialchars($doctors['CRM']); ?>" />
+        <input name="CRM" placeholder="0000000" type="text" class="form-control crm" id="inputCRM" value="<?php echo htmlspecialchars($doctors['CRM']); ?>" />
       </div>
       <div class="col-md-6">
         <label for="inputPassword4" class="form-label">Email</label>
@@ -66,7 +66,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
       </div>
       <div class="col-md-6">
         <label for="inputEmail4" class="form-label">Telefone</label>
-        <input name="phone" placeholder="(00) 0000-0000" type="text" class="form-control" id="inputPhone4" value="<?php echo htmlspecialchars($doctors['phone']); ?>" />
+        <input name="phone" placeholder="(00) 00000-0000" type="text" class="form-control phone_with_ddd" id="inputPhone4" value="<?php echo htmlspecialchars($doctors['phone']); ?>" />
       </div>
       <div class="col-md-8">
         <label for="inputEmail4" class="form-label">Especialidade</label>
@@ -77,6 +77,21 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
       </div>
     </form>
 </main>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js" integrity="sha512-pHVGpX7F/27yZ0ISY+VVjyULApbDlD0/X0rgGbTqCE7WFW5MezNTWG/dnhtbBuICzsd0WQPgpE4REBLv+UqChw==" crossorigin="anonymous" referrerpolicy="no-referrer"> </script>
+
+<script>
+
+  $(document).ready(function() {
+
+      $('.phone_with_ddd').mask('(00) 00000-0000');
+
+      $('.crm').mask('0000000');
+
+  });
+
+</script>
 
 
 

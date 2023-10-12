@@ -45,7 +45,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $sql->bindParam(':id', $id, PDO::PARAM_INT);
 
     if ($sql->execute()) {
-        
+                
         header('Location: consultIndex.php');
         exit;
 
