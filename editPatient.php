@@ -56,7 +56,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     <legend style="padding-left:35%; padding-bottom:2%">CADASTRO DE PACIENTE</legend>
         <div class="col-md-8">
-            <label for="inputExpertise4" class="form-label">Nome</label>
+            <label for="inputName4" class="form-label">Nome</label>
             <input name="name" type="text" class="form-control" id="inputExpertise4" value="<?php echo htmlspecialchars($patient['name']); ?>" />
         </div>
         <div class="col-md-4">

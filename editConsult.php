@@ -84,12 +84,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <?php endforeach ?>
         </select>
         <div class="col-md-4">
-            <label for="inputPassword4" class="form-label">Data</label>
+            <label for="inputDate4" class="form-label">Data</label>
             <input name="data" placeholder="DD/MM/AAAA" type="date" class="form-control" id="inputdoctors_id" value="<?php echo date('Y-m-d', strtotime($consult['data'])); ?>" />
         </div>  
 
         <div class="col-md-4">
-            <label for="inputPassword4" class="form-label">Hora</label>
+            <label for="inputHour4" class="form-label">Hora</label>
             <input name="hour" placeholder="00:00" type="time" class="form-control" id="inputdoctors_id" value="<?php echo date('H:i', strtotime($consult['hour'])); ?>" />
         </div>
 

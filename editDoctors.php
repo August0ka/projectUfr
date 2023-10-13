@@ -56,23 +56,23 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     <legend style="padding-left:35%; padding-bottom:2%">CADASTRO DE MÉDICOS</legend>
       <div class="col-8">
-        <label for="inputAddress" class="form-label">Nome</label>
+        <label for="inputName" class="form-label">Nome</label>
         <input name="name" type="text" class="form-control" id="inputName" value="<?php echo htmlspecialchars($doctors['name']); ?>" />
       </div>
       <div class="col-md-4">
-        <label for="inputPassword4" class="form-label">CRM</label>
+        <label for="inputCRM4" class="form-label">CRM</label>
         <input name="CRM" placeholder="0000000" type="text" class="form-control crm" id="inputCRM" value="<?php echo htmlspecialchars($doctors['CRM']); ?>" />
       </div>
       <div class="col-md-6">
-        <label for="inputPassword4" class="form-label">Email</label>
+        <label for="inputEmail4" class="form-label">Email</label>
         <input name="email" placeholder="example@mail.com" type="email" class="form-control" id="inputEmail4" value="<?php echo htmlspecialchars($doctors['email']); ?>" />
       </div>
       <div class="col-md-6">
-        <label for="inputEmail4" class="form-label">Telefone</label>
+        <label for="inputPhone4" class="form-label">Telefone</label>
         <input name="phone" placeholder="(00) 00000-0000" type="text" class="form-control phone_with_ddd" id="inputPhone4" value="<?php echo htmlspecialchars($doctors['phone']); ?>" />
       </div>
       <div class="col-md-8">
-        <label for="inputEmail4" class="form-label">Especialidade</label>
+        <label for="inputExpertise4" class="form-label">Especialidade</label>
         <input name="expertise" type="text" class="form-control" id="inputExpertise4" value="<?php echo htmlspecialchars($doctors['expertise']); ?>" />
       </div>
       <div class="col-12">

@@ -41,11 +41,11 @@ $patients = $sql->fetchAll(PDO::FETCH_ASSOC);
         </select>
       </div>
       <div class="col-md-4">
-              <label for="inputPassword4" class="form-label">Data</label>
+              <label for="inputDate4" class="form-label">Data</label>
               <input name="date" placeholder="DD/MM/AAAA" type="date" class="form-control" id="inputCRM" />
       </div>  
       <div class="col-md-4">
-              <label for="inputPassword4" class="form-label">Hora</label>
+              <label for="inputHour4" class="form-label">Hora</label>
               <input name="hour" placeholder="00:00" type="time" class="form-control" id="inputCRM" />
       </div>  
       <div class="col-6">
